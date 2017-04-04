@@ -28,5 +28,11 @@ export const hiddenForm = (isHidden) => (
            type:ActionTypes.HIDDEN_FORM,
            isHidden: isHidden
     })
+
+export const filterQuestions = (tag) => (
+    {
+           type:ActionTypes.FILTER_QUESTIONS,
+           currentTag: tag
+    })
     
     
