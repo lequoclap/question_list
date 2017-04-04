@@ -11,7 +11,7 @@ const initialState = [
     ],
     completed: false,
     id: 0,
-    right_answer: 'a'
+    right_answer: 0
   }
 ]
 
@@ -30,23 +30,6 @@ export default function questions(state = initialState, action){
                     }
                     ,...state
                 ];
-           case ActionTypes.FILTER_QUESTIONS:
-                var visibleQuestions = state.filter((question) => {
-                    switch(action.currentTag){
-                        case FilterTags.ALL:
-                            return question
-                        case FilterTags.EVEN:
-                            if(question.id % 2 == 0)
-                                return question
-                        case FilterTags.ODD:
-                            if(question.id % 2 == 1)
-                                return question
-                        default:
-                            return null
-                    }
-                })
-                
-                return visibleQuestions
             default:
                 return state;
 
