@@ -5,6 +5,9 @@ import { createStore } from 'redux';
 import reducer from './reducers';
 import App from './components/App';
 
+import 'materialize-css/dist/js/materialize.min.js';
+import 'materialize-css/dist/css/materialize.min.css';
+// import 'material-icons';
 import './index.css';
 
 let store = createStore(reducer);

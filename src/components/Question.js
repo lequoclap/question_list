@@ -14,9 +14,9 @@ function getQuestionView({question, answers,id}){
           {answers.map( answer => {
               return(
                     <li>
-                      <input type="radio" name={"question_" + id} 
+                      <input type="radio" name={"question_" + id} id={"question_" +id + "_" + i} 
                       value={i++}/>
-                      <label for="1"> {answer} </label>
+                      <label for={"question_" +id + "_" + i}> {answer} </label>
                     </li>
                   )
           })}
@@ -29,7 +29,7 @@ function getQuestionView({question, answers,id}){
             
           <div style={{"width": "500px"}}>
             Question:
-            <input class="question" type="text" name="question" />
+            <input className="question" type="text" name="question" />
             <ul>
                 Answear A:
                 <li><input type="text" name="a" /></li>

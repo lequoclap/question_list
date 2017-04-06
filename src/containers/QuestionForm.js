@@ -4,16 +4,17 @@ import Question from '../components/Question'
 import {addQuestion} from '../actions'
 import {hiddenForm} from '../actions'
 
-
 const QuestionForm = ({isHidden, onAddQuestionClick, onHiddenFormClick}) => {
     if(isHidden)
         return (<div> 
-            <button onClick={() => onHiddenFormClick(isHidden)} > Appear form</button>
+            <button onClick={() => onHiddenFormClick(isHidden)} className="btn-floating btn-large waves-effect waves-light red"><i className="material-icons">add</i></button>
                             <hr/>
+                            
             </div>
         );
     return (
       <div>
+          <button onClick={() => onHiddenFormClick(isHidden)} className="btn-floating btn-large waves-effect waves-light red"><i className="material-icons">remove</i></button>
             <form
                 onSubmit={e => {
                     e.preventDefault()
@@ -21,10 +22,10 @@ const QuestionForm = ({isHidden, onAddQuestionClick, onHiddenFormClick}) => {
                 }}
             >
             <Question/>
-            <input type="submit" value="Add" />
+        <button type="submit" className="btn waves-effect waves-light"><i className="material-icons">note_add</i></button>
             </form>
-          <button onClick={() => onHiddenFormClick(isHidden)}> Hidden form</button>
                      <hr/>
+        
     </div>
     );
 }

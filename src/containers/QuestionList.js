@@ -7,37 +7,39 @@ import {FilterTags} from '../core/constants';
 
 const QuestionList = ({questions, currentTag, submitAnswer}) => {
     var visibleQuestions = questions.filter((question) => {
-
                     switch(currentTag){
                         case FilterTags.ALL:
                             return question
                         case FilterTags.EVEN:
-                                return (question.id % 2 == 0)
+                            return (question.id % 2 == 0)
                         case FilterTags.ODD:
-                                return (question.id % 2 == 1)
+                            return (question.id % 2 == 1)
                     }
                 })
     return (
-    <div>
-        <form
-            onSubmit={e => {
-                e.preventDefault()
-                submitAnswer(e)
-            }}
-        >
-        {visibleQuestions.map(question => {
-            return(
-            <Question
-                question={question.question}
-                answers={question.answers}
-                id={question.id}
-            />
-            )
-        })}
+        <div>
+            <form
+                onSubmit={e => {
+                    e.preventDefault()
+                    submitAnswer(e)
+                }}
+            >
+            {visibleQuestions.map(question => {
+                return(
+                <Question
+                    question={question.question}
+                    answers={question.answers}
+                    id={question.id}
+                />
+                )
+            })}
 
-        <input class="waves-effect waves-light btn" type="submit" value="Submit" />
-        </form>
-    </div>
+              <button className="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i className="material-icons right">send</i>
+            </button>
+        
+            </form>
+        </div>
 )};
 
 
